@@ -19,6 +19,7 @@ module.exports = {
             '@templates': path.resolve(__dirname, 'src/templates/'),
             '@styles': path.resolve(__dirname, 'src/styles/'),
             '@images': path.resolve(__dirname, 'src/assets/images/'),
+            '@fonts': path.resolve(__dirname, 'src/assets/fonts/')
         }
     },
     module: {
@@ -50,8 +51,8 @@ module.exports = {
                         limit: 10000,
                         mimetype: 'application/font-woff',
                         name: '[name][contenthash].[ext]',
-                        outputPath: '../assets/fonts/',
-                        publicPath: '../assets/fonts/',
+                        outputPath: './assets/fonts/',
+                        publicPath: '../fonts/',
                         esModule: false
                     }
                 }
@@ -65,7 +66,7 @@ module.exports = {
             filename: './index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: 'assets/[name].[contenthash].css'
+            filename: 'assets/styles/[name].[contenthash].css'
         }),
         new Dotenv()
     ],
